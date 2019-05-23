@@ -10,13 +10,11 @@ import WebKit
 
 class ViewController: NSViewController {
     
-    var pageWebView: WKWebView!
+    @IBOutlet var pageWebView: WKWebView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.pageWebView = WKWebView(frame: self.view.frame)
-        self.view.addSubview(pageWebView)
         let urlReq = URLRequest(url: URL(string: "http://homeassistant:8123/")!)
         self.pageWebView.load(urlReq)
         // Do any additional setup after loading the view.
