@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C93EC442296448400F025D7 /* happ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C93EC442296448400F025D7 /* Home Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C93EC472296448400F025D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C93EC492296448400F025D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C93EC4B2296448500F025D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		5C93EC452296448400F025D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5C93EC442296448400F025D7 /* happ.app */,
+				5C93EC442296448400F025D7 /* Home Assistant.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,7 +80,7 @@
 			);
 			name = happ;
 			productName = happ;
-			productReference = 5C93EC442296448400F025D7 /* happ.app */;
+			productReference = 5C93EC442296448400F025D7 /* Home Assistant.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5C93EC3F2296448400F025D7 /* Build configuration list for PBXProject "happ" */;
+			buildConfigurationList = 5C93EC3F2296448400F025D7 /* Build configuration list for PBXProject "Home Assistant" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -288,7 +288,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxnd.happ;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Home Assistant";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -307,7 +307,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxnd.happ;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Home Assistant";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -315,7 +315,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5C93EC3F2296448400F025D7 /* Build configuration list for PBXProject "happ" */ = {
+		5C93EC3F2296448400F025D7 /* Build configuration list for PBXProject "Home Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5C93EC522296448500F025D7 /* Debug */,
