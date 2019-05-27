@@ -15,8 +15,18 @@ class ViewController: NSViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        pageWebView = WKWebView(frame: self.view.frame)
+        pageWebView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pageWebView)
+        [pageWebView.topAnchor.constraint(equalTo: view.topAnchor),
+         pageWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+         pageWebView.leftAnchor.constraint(equalTo: view.leftAnchor),
+         pageWebView.rightAnchor.constraint(equalTo: view.rightAnchor)].forEach  {
+            anchor in
+            anchor.isActive = true
+        }
         let urlReq = URLRequest(url: URL(string: "http://homeassistant:8123/")!)
-        self.pageWebView.load(urlReq)
+        pageWebView.load(urlReq)
         // Do any additional setup after loading the view.
     }
     
