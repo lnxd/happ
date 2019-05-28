@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminateAfterLastWindowClosed (_ theApplication: NSApplication) -> Bool {
+        NSLog("[happ] Window closed, quitting app")
         return true
     }
 

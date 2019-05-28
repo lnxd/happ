@@ -33,7 +33,7 @@ class ViewController: NSViewController {
         
         let urlRequest = URLRequest(url: targetURL!)
         pageWebView.load(urlRequest)
-        NSLog("[happ] Cookies deleted")
+        NSLog("[happ] Loaded")
     }
     
     override var representedObject: Any? {
