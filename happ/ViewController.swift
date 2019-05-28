@@ -11,12 +11,15 @@ import WebKit
 class ViewController: NSViewController {
     
     @IBOutlet var pageWebView: WKWebView!
+    var targetURL = URL(string: "http://homeassistant:8123/")
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         pageWebView = WKWebView(frame: self.view.frame)
         pageWebView.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(pageWebView)
         [pageWebView.topAnchor.constraint(equalTo: view.topAnchor),
          pageWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -25,9 +28,9 @@ class ViewController: NSViewController {
             anchor in
             anchor.isActive = true
         }
-        let urlReq = URLRequest(url: URL(string: "http://homeassistant:8123/")!)
-        pageWebView.load(urlReq)
-        // Do any additional setup after loading the view.
+        
+        let urlRequest = URLRequest(url: targetURL!)
+        pageWebView.load(urlRequest)
     }
     
     override var representedObject: Any? {
@@ -35,4 +38,27 @@ class ViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
+    
+    // MARK: - IBActions - menus
+    
+    @IBAction func flushPageWebView(_ sender: Any) {
+        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+        print("[happ] Cookies deleted")
+        
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { items in
+            items.forEach { item in
+                WKWebsiteDataStore.default().removeData(ofTypes: item.dataTypes, for: [item], completionHandler: {})
+                print("[happ] Item \(item) deleted")
+            }
+        }
+
+        reloadPageWebView(true)
+    }
+    
+    @IBAction func reloadPageWebView(_ sender: Any) {
+        let urlRequest = URLRequest(url: targetURL!)
+        pageWebView.load(urlRequest)
+        print("[happ] Reloaded page")
+    }
+
 }

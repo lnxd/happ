@@ -41,6 +41,18 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Reload" keyEquivalent="r" id="h85-Qj-Ava">
+                                            <connections>
+                                                <action selector="reloadPageWebView:" target="Ady-hI-5gd" id="WiC-pP-XKe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Flush and Reload" keyEquivalent="r" id="lUI-17-vyn">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="flushPageWebView:" target="Ady-hI-5gd" id="rBu-lG-3yT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Qbk-Fs-BW3"/>
                                         <menuItem title="Quit Home Assistant" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
@@ -494,7 +506,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Home Assistant" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Home Assistant" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="Home Assistant" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="1000" height="675"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
