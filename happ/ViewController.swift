@@ -17,6 +17,8 @@ class ViewController: NSViewController {
     {
         super.viewDidLoad()
         
+        NSLog("[happ] Started")
+        
         pageWebView = WKWebView(frame: self.view.frame)
         pageWebView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -31,6 +33,7 @@ class ViewController: NSViewController {
         
         let urlRequest = URLRequest(url: targetURL!)
         pageWebView.load(urlRequest)
+        NSLog("[happ] Cookies deleted")
     }
     
     override var representedObject: Any? {
@@ -43,12 +46,12 @@ class ViewController: NSViewController {
     
     @IBAction func flushPageWebView(_ sender: Any) {
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
-        print("[happ] Cookies deleted")
+        NSLog("[happ] Cookies deleted")
         
         WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { items in
             items.forEach { item in
                 WKWebsiteDataStore.default().removeData(ofTypes: item.dataTypes, for: [item], completionHandler: {})
-                print("[happ] Item \(item) deleted")
+                NSLog("[happ] Item \(item) deleted")
             }
         }
 
@@ -58,7 +61,7 @@ class ViewController: NSViewController {
     @IBAction func reloadPageWebView(_ sender: Any) {
         let urlRequest = URLRequest(url: targetURL!)
         pageWebView.load(urlRequest)
-        print("[happ] Reloaded page")
+        NSLog("[happ] Reloaded page")
     }
 
 }
